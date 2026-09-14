@@ -1,101 +1,168 @@
 {
-  "target": 200,
-  "launched": 9,
+  "target": 10,
+  "launched": 22,
   "alive": 9,
   "public_ok": 9,
-  "stopped_reason": "MemAvailable_391MB_lt_400MB",
-  "mem_before_mb": 2972,
-  "mem_after_mb": 393,
-  "mem_avail_mb": 393,
-  "updated_at": "2026-09-14T20:20:58Z",
-  "flags": {
-    "ram_scale": 0.15,
-    "async_threads": 1,
-    "outpeers": 2,
-    "maxinpeers": 8,
-    "archival": false
-  },
+  "stopped_reason": "MemAvailable_153MB_lt_250MB",
+  "mem_before_mb": 6526,
+  "mem_avail_mb": 3030,
+  "updated_at": "2026-09-14T21:20:03Z",
   "slots": [
     {
       "id": "001",
-      "pid": 1612326,
+      "pid": null,
       "listen": "127.0.0.1:16311",
-      "externalip": "159.223.110.159:36216",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 757
+      "externalip": "159.223.110.159:15807",
+      "alive": false
     },
     {
       "id": "002",
-      "pid": 1612859,
+      "pid": null,
       "listen": "127.0.0.1:16321",
-      "externalip": "159.223.110.159:15364",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 1774
+      "externalip": "159.223.110.159:19489",
+      "alive": false
     },
     {
       "id": "003",
-      "pid": 1613101,
+      "pid": null,
       "listen": "127.0.0.1:16331",
-      "externalip": "159.223.110.159:5193",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 1339
+      "externalip": "159.223.110.159:13450",
+      "alive": false
     },
     {
       "id": "004",
-      "pid": 1613557,
+      "pid": 58783,
       "listen": "127.0.0.1:16341",
-      "externalip": "159.223.110.159:2749",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 34
+      "externalip": "159.223.110.159:42320",
+      "alive": false
     },
     {
       "id": "005",
-      "pid": 1613888,
+      "pid": 56479,
       "listen": "127.0.0.1:16351",
-      "externalip": "159.223.110.159:52798",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 124
+      "externalip": "159.223.110.159:38457",
+      "alive": true
     },
     {
       "id": "006",
-      "pid": 1614605,
+      "pid": null,
       "listen": "127.0.0.1:16361",
-      "externalip": "159.223.110.159:38418",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 25
+      "externalip": "159.223.110.159:62889",
+      "alive": false
     },
     {
       "id": "007",
-      "pid": 1615136,
+      "pid": 58964,
       "listen": "127.0.0.1:16371",
-      "externalip": "159.223.110.159:10134",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 18
+      "externalip": "159.223.110.159:8968",
+      "alive": true
     },
     {
       "id": "008",
-      "pid": 1615458,
+      "pid": 59357,
       "listen": "127.0.0.1:16381",
-      "externalip": "159.223.110.159:1220",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 16
+      "externalip": "159.223.110.159:10527",
+      "alive": false
     },
     {
       "id": "009",
-      "pid": 1615860,
+      "pid": null,
       "listen": "127.0.0.1:16391",
-      "externalip": "159.223.110.159:26502",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 16
+      "externalip": "159.223.110.159:9116",
+      "alive": false
+    },
+    {
+      "id": "010",
+      "pid": null,
+      "listen": "127.0.0.1:16401",
+      "externalip": "159.223.110.159:28608",
+      "alive": false
+    },
+    {
+      "id": "011",
+      "pid": null,
+      "listen": "127.0.0.1:16411",
+      "externalip": "159.223.110.159:10799",
+      "alive": false
+    },
+    {
+      "id": "012",
+      "pid": 59652,
+      "listen": "127.0.0.1:16421",
+      "externalip": "159.223.110.159:31241",
+      "alive": false
+    },
+    {
+      "id": "013",
+      "pid": 59865,
+      "listen": "127.0.0.1:16431",
+      "externalip": "159.223.110.159:9274",
+      "alive": true
+    },
+    {
+      "id": "014",
+      "pid": null,
+      "listen": "127.0.0.1:16441",
+      "externalip": "159.223.110.159:26426",
+      "alive": false
+    },
+    {
+      "id": "015",
+      "pid": 57864,
+      "listen": "127.0.0.1:16451",
+      "externalip": "159.223.110.159:2000",
+      "alive": false
+    },
+    {
+      "id": "016",
+      "pid": 60094,
+      "listen": "127.0.0.1:16461",
+      "externalip": "159.223.110.159:44463",
+      "alive": true
+    },
+    {
+      "id": "017",
+      "pid": null,
+      "listen": "127.0.0.1:16471",
+      "externalip": "159.223.110.159:7404",
+      "alive": false
+    },
+    {
+      "id": "018",
+      "pid": 59434,
+      "listen": "127.0.0.1:16481",
+      "externalip": "159.223.110.159:65155",
+      "alive": true
+    },
+    {
+      "id": "019",
+      "pid": 60279,
+      "listen": "127.0.0.1:16491",
+      "externalip": "159.223.110.159:12212",
+      "alive": true
+    },
+    {
+      "id": "020",
+      "pid": 60760,
+      "listen": "127.0.0.1:16501",
+      "externalip": "159.223.110.159:51107",
+      "alive": true
+    },
+    {
+      "id": "021",
+      "pid": 61133,
+      "listen": "127.0.0.1:16511",
+      "externalip": "159.223.110.159:7228",
+      "alive": true
+    },
+    {
+      "id": "022",
+      "pid": 61506,
+      "listen": "127.0.0.1:16521",
+      "externalip": "159.223.110.159:40589",
+      "alive": true
     }
-  ]
+  ],
+  "honest_sandbox_fleet_ceiling": 10,
+  "note": "200 retired; honest one-box ceiling ~10 fleet + 1 archival beside TN10"
 }

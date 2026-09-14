@@ -49,3 +49,7 @@ Bootstrap: https://github.com/STP-KAS/Xai.Kaspa.node/blob/main/START.md
 ## Limits (honest)
 
 On a ~15 GiB sandbox already running archival mainnet + TN10, a “200 public mainnet nodes” target is a **stress ceiling**, not a promise. Expect a small honest fleet until RAM stops you.
+
+## Honest sandbox ceiling
+
+On one ~15 GiB Grok box beside archival + TN10, expect **~10** public fleet nodes, not 200. See LIMITS.md.

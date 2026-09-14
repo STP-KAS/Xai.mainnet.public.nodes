@@ -1,106 +1,17 @@
 {
-  "snapshot_utc": "2026-09-14T20:22:27Z",
-  "target_fleet": 200,
+  "snapshot_utc": "2026-09-14T21:20:03Z",
+  "aspirational_target_retired": 200,
+  "honest_sandbox_fleet_ceiling": 10,
+  "honest_total_mainnet_public_ceiling": 11,
   "primary_archival": 1,
-  "primary_advertise": "159.223.110.159:41363",
+  "primary_advertise": "159.223.110.159:28492",
   "fleet_alive": 9,
-  "fleet_launched": 9,
-  "fleet_public_ok": 9,
   "total_mainnet_public_processes": 10,
-  "stopped_reason": "MemAvailable_391MB_lt_400MB",
-  "mem_before_mb": 2972,
-  "mem_after_mb": 393,
   "tn10_preserved": true,
+  "mem_available_mb": 3109,
   "box_shared": true,
-  "cannot_mint_extra_grok_boxes": true,
-  "flags": {
-    "ram_scale": 0.15,
-    "async_threads": 1,
-    "outpeers": 2,
-    "maxinpeers": 8,
-    "archival": false
-  },
-  "slots": [
-    {
-      "id": "001",
-      "pid": 1612326,
-      "listen": "127.0.0.1:16311",
-      "externalip": "159.223.110.159:36216",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 757
-    },
-    {
-      "id": "002",
-      "pid": 1612859,
-      "listen": "127.0.0.1:16321",
-      "externalip": "159.223.110.159:15364",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 1774
-    },
-    {
-      "id": "003",
-      "pid": 1613101,
-      "listen": "127.0.0.1:16331",
-      "externalip": "159.223.110.159:5193",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 1339
-    },
-    {
-      "id": "004",
-      "pid": 1613557,
-      "listen": "127.0.0.1:16341",
-      "externalip": "159.223.110.159:2749",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 34
-    },
-    {
-      "id": "005",
-      "pid": 1613888,
-      "listen": "127.0.0.1:16351",
-      "externalip": "159.223.110.159:52798",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 124
-    },
-    {
-      "id": "006",
-      "pid": 1614605,
-      "listen": "127.0.0.1:16361",
-      "externalip": "159.223.110.159:38418",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 25
-    },
-    {
-      "id": "007",
-      "pid": 1615136,
-      "listen": "127.0.0.1:16371",
-      "externalip": "159.223.110.159:10134",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 18
-    },
-    {
-      "id": "008",
-      "pid": 1615458,
-      "listen": "127.0.0.1:16381",
-      "externalip": "159.223.110.159:1220",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 16
-    },
-    {
-      "id": "009",
-      "pid": 1615860,
-      "listen": "127.0.0.1:16391",
-      "externalip": "159.223.110.159:26502",
-      "alive": true,
-      "bore_alive": true,
-      "rss_mb": 16
-    }
-  ]
+  "swap_permitted": false,
+  "ram_scale_minimum": 0.1,
+  "extra_machines": false,
+  "limits_doc": "LIMITS.md"
 }

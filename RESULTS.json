@@ -1,0 +1,12 @@
+{
+  "snapshot_utc": "2026-09-14T20:20:55Z",
+  "target_fleet": 200,
+  "primary_archival": 1,
+  "primary_advertise": "159.223.110.159:41363",
+  "fleet_alive": 9,
+  "total_mainnet_public_processes": 10,
+  "tn10_preserved": true,
+  "mem_available_mb": 415,
+  "box_shared": true,
+  "cannot_mint_extra_grok_boxes": true
+}

@@ -1,4 +1,6 @@
-> **Experimental only. Not a product.** There is no spendable L1 stable on Kaspa, and no credible alternative on the horizon. Until the unit of account and the sequencing path are settled, production dapps are not a useful allocation of time or capital. [KASPAglobal](https://x.com/kaspaglobal/status/2100536064683176270) · [DISCLAIMER.md](DISCLAIMER.md)
+> **Experimental only. Not a product.** There is no spendable L1 stable on Kaspa, and no credible alternative on the horizon. Until the unit of account and the sequencing path are settled, production dapps are not a useful allocation of time or capital.
+>
+> Do not use wallet integrations on this GitHub. STP remains a clown. [DISCLAIMER.md](DISCLAIMER.md)
 
 # Xai.mainnet.public.nodes
 
@@ -43,7 +45,6 @@ So the honest test for **this** environment is: **pack ~10 public fleet slots be
 - `slot-021`: `159.223.110.159:7228`
 - `slot-022`: `159.223.110.159:40589`
 
-
 MemAvailable at snapshot: **3109 MB**.
 
 ## How we tested
@@ -80,6 +81,5 @@ See [BEST_PRACTICE.md](./BEST_PRACTICE.md).
 
 ## Related
 
-- Stack: https://github.com/STP-KAS/Xai.Kaspa.node  
-- Upstream: https://github.com/kaspanet/rusty-kaspa  
-
+- Stack: https://github.com/STP-KAS/Xai.Kaspa.node
+- Upstream: https://github.com/kaspanet/rusty-kaspa

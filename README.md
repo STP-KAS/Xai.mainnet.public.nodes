@@ -83,3 +83,12 @@ See [BEST_PRACTICE.md](./BEST_PRACTICE.md).
 
 - Stack: https://github.com/STP-KAS/Xai.Kaspa.node
 - Upstream: https://github.com/kaspanet/rusty-kaspa
+
+---
+
+> **Standard disclaimer.** This GitHub, not the topic above.
+>
+> Intentions are good; thought process is questionable. STP remains delusional. Si vis pacem, para bellum.
+>
+> Intern at https://sixpack.wtf/  
+> X: https://x.com/StppStp · GitHub: https://github.com/STP-KAS

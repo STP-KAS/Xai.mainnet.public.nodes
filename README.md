@@ -4,6 +4,8 @@
 
 # Xai.mainnet.public.nodes
 
+> **Retired 25 Sep 2026.** The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST. The archival node and the fleet endpoints listed below are gone. Do not connect to them. The measured ceiling below stays as the historical result (snapshot 14 Sep). Follow-up work moved to Testnet-10 only: [tn10-vprogs-stress-findings](https://github.com/STP-KAS/tn10-vprogs-stress-findings).
+
 Honest **one-sandbox density test** for Kaspa mainnet public nodes on a **Grok Bot Linux box**.
 
 > **Target is no longer 200.** That number was a stress fantasy. This repo reports the **measured ceiling** on one shared ~15 GiB sandbox.

@@ -1,5 +1,7 @@
 # Best practice — Kaspa nodes on Grok Bot (LLM operators)
 
+> **Historical, retired 25 Sep 2026.** This test is finished. The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST, and no node, fleet or tunnel from it is running. These are operator notes from the test. Nothing described here is live now. See [README.md](README.md).
+
 ## What Grok Bot is (and is not)
 
 - Each Grok agent has a chat and persona; **all of a user’s agents share one Linux “box”**.

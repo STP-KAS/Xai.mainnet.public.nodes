@@ -1,4 +1,5 @@
 {
+  "status": "retired: historical record only. The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST. Every node and endpoint in this file is gone. Do not connect to them.",
   "target": 10,
   "launched": 22,
   "alive": 9,

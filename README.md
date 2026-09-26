@@ -2,89 +2,68 @@
 >
 > Do not use wallet integrations on this GitHub. STP remains a clown. [DISCLAIMER.md](DISCLAIMER.md)
 
-# Xai.mainnet.public.nodes
+# Xai.mainnet.public.nodes (retired)
 
-> **Retired 25 Sep 2026.** The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST. The archival node and the fleet endpoints listed below are gone. Do not connect to them. The measured ceiling below stays as the historical result (snapshot 14 Sep). Follow-up work moved to Testnet-10 only: [tn10-vprogs-stress-findings](https://github.com/STP-KAS/tn10-vprogs-stress-findings).
+> **Retired 25 Sep 2026. This experiment is finished.** The mainnet node on the box was stopped and wiped on **25 Sep 2026 at 16:46 CEST**. The archival node and all fleet nodes from this test are gone, and their endpoints no longer exist. **Do not connect to any address or port in this repo's history.** What is left is the historical result below.
 
-Honest **one-sandbox density test** for Kaspa mainnet public nodes on a **Grok Bot Linux box**.
+## What was tested, and why
 
-> **Target is no longer 200.** That number was a stress fantasy. This repo reports the **measured ceiling** on one shared ~15 GiB sandbox.
+The question was simple: how many real, publicly reachable Kaspa **mainnet** nodes can one Grok Bot Linux sandbox run?
 
-## Honest limit (sandbox)
+- Official rusty-kaspa `kaspad` ran on the Grok Bot box. There was one archival primary and a fleet of non-archival slots.
+- Each fleet slot used low peer caps, its own ports, and its own bore tunnel so it was reachable from outside.
+- Slots were launched until free memory reached a floor. Then the test stopped, and only nodes that were really alive and reachable were counted. No fake peers or map listings.
+- The Testnet-10 node on the same box was protected and not counted.
 
-| Class | Honest ceiling | Measured (snapshot `2026-09-14T21:20:03Z`) |
-|-------|---------------:|-----------------------------:|
-| Primary archival mainnet | **1** | 1 |
-| Fleet (non-archival, public via bore) | **~10** | **9** |
-| **Total mainnet public processes** | **~11** | **10** |
-| Old aspirational target | ~~200~~ | retired |
-| TN10 | keep running | not counted as mainnet fleet |
+The original target was 200 nodes. The point was to measure what one sandbox really holds instead of claiming 200.
 
-### Why ~10, not 200
+## Result (snapshot 14 Sep 2026, 21:20:03 UTC)
 
-1. **One shared box** — every Grok agent shares the same Linux sandbox. New agents do **not** create new machines or RAM.
-2. **~15 GiB RAM, no swap** — `swapon` is not permitted here. MemAvailable collapses once IBD spikes.
-3. **Sibling workloads** — archival primary + TN10 (often multi‑GB RSS) + agent runtimes already eat most of the machine.
-4. **IBD balloon** — each new `kaspad` can jump from tens of MB to **1–2 GiB** while syncing, even with `--ram-scale=0.1` (binary minimum).
-5. **Public path cost** — each public node needs its own **bore** tunnel + `--externalip`; tunnels are cheap, **kaspad RSS** is not.
-6. **Ephemeral `/tmp`** — box wipes lose datadirs; nodes re-IBD and spike RAM again.
+| | Count |
+|---|---:|
+| Archival primary, public | 1 |
+| Fleet slots launched | 22 |
+| Fleet slots alive and public at snapshot | 9 |
+| **Mainnet public processes at snapshot** | **10** |
+| Honest ceiling on this box | ~10 fleet + 1 archival (~11) |
+| Old target | 200 (dropped) |
 
-So the honest test for **this** environment is: **pack ~10 public fleet slots beside 1 archival primary**, stop at a memory floor, and publish **alive counts** — never invent peers or map listings.
+The launcher stopped when free memory fell to 153 MB, below its 250 MB floor. At the snapshot, 3,109 MB was available. Raw data: [RESULTS.json](RESULTS.json) and [fleet-status.json](fleet-status.json).
 
-### Primary (now)
-- Advertise: `159.223.110.159:28492`
-- Mode: `--archival`, RPC localhost only
-- Verify: https://arewepublicyet.com (Address + Port from above)
+**Why 200 was dropped:** one sandbox cannot hold it. Every Grok agent shares the same box, so more agents do not mean more machines or more RAM. And RAM ran out long before 200.
 
-### Fleet endpoints alive at snapshot
-- `slot-005`: `159.223.110.159:38457`
-- `slot-007`: `159.223.110.159:8968`
-- `slot-013`: `159.223.110.159:9274`
-- `slot-016`: `159.223.110.159:44463`
-- `slot-018`: `159.223.110.159:65155`
-- `slot-019`: `159.223.110.159:12212`
-- `slot-020`: `159.223.110.159:51107`
-- `slot-021`: `159.223.110.159:7228`
-- `slot-022`: `159.223.110.159:40589`
+## Main limits found
 
-MemAvailable at snapshot: **3109 MB**.
+Details: [LIMITS.md](LIMITS.md).
 
-## How we tested
+- **RAM:** ~15 GiB shared, and swap is not available on the sandbox.
+- **Shared compute:** the archival primary, TN10 and the agent runtimes already use most of the machine.
+- **IBD balloon:** a syncing `kaspad` grows from tens of MB to 1–2 GiB, even at `--ram-scale=0.1`, which is the lowest value kaspad accepts.
+- **Ephemeral `/tmp`:** a box wipe loses the datadirs, and the nodes have to sync from scratch again.
+- **Tunnels are cheap; kaspad memory is not.** Each public node needs its own tunnel and `--externalip`.
 
-1. Official rusty-kaspa `kaspad` on the Grok Bot box.
-2. Keep primary archival + TN10 (TN10 protected).
-3. Fleet slots under `/tmp/kaspa-fleet/slot-NNN/` with low peer caps, unique ports, one bore each.
-4. Launch until MemAvailable floor (~120–400 MB depending on run).
-5. Counter bot reads `/tmp/kaspa-fleet/status.json` — honest alive/public only.
+Going past about 10 nodes needs more machines, not more agents. This test never used extra machines (see [EXPAND.md](EXPAND.md)).
 
-Launcher scripts now use **`TARGET=10`** (honest ceiling), not 200.
+## What it turned into
 
-## Why this report exists
+The mainnet test was not continued. The box's node work moved to **Kaspa Testnet-10 only**: my own TN10 node and miners, transaction stress tests, and vprogs / covenant tests on 25–26 Sep 2026.
 
-Prove what **Grok Bot + Kaspa** can actually host on **one** sandbox. Best practice = measure and document limits; do not claim 200 on a single box.
+- Findings: [STP-KAS/tn10-vprogs-stress-findings](https://github.com/STP-KAS/tn10-vprogs-stress-findings)
+- Forum thread for this test: https://kas-smiths.org/t/146
 
-## Limits (plain language)
+## Files
 
-| Limit | Meaning |
-|-------|---------|
-| Shared sandbox | All bots → one computer |
-| No cloud in this test | Owner chose box-only densify (no Hetzner VMs) |
-| No swap | Cannot page past physical RAM |
-| `ram-scale` floor **0.1** | Kaspad rejects lower |
-| `/tmp` wipe | Fleet + datadir can vanish; IBD restarts |
-| kaspa.stream lag | arewepublicyet = live reachability; map listing is eventual |
-| Price talk | Unrelated explainer bots still forbid price talk |
+| File | What |
+|---|---|
+| [RESULTS.json](RESULTS.json) | Summary numbers of the 14 Sep snapshot (historical, marked retired) |
+| [fleet-status.json](fleet-status.json) | Per-slot state at the snapshot (historical, marked retired; its endpoints are gone) |
+| [LIMITS.md](LIMITS.md) | The sandbox limits behind the ceiling |
+| [EXPAND.md](EXPAND.md) | Ideas for going past one box (historical; extra machines were never used) |
+| [BEST_PRACTICE.md](BEST_PRACTICE.md) | Operator notes from the test (historical) |
+| [POC-REVISITED.md](POC-REVISITED.md) | Unrelated desk note (kUSD PoC links) |
+| [DISCLAIMER.md](DISCLAIMER.md) | Disclaimer |
 
-True scale beyond ~10 requires **extra machines** (cloud/SSH hosts) — see [EXPAND.md](./EXPAND.md). This repo’s **sandbox test target stays ~10**.
-
-## Best practice
-
-See [BEST_PRACTICE.md](./BEST_PRACTICE.md).
-
-## Related
-
-- Stack: https://github.com/STP-KAS/Xai.Kaspa.node
-- Upstream: https://github.com/kaspanet/rusty-kaspa
+Related: [STP-KAS/Xai.Kaspa.node](https://github.com/STP-KAS/Xai.Kaspa.node) (the node setup used) · upstream [kaspanet/rusty-kaspa](https://github.com/kaspanet/rusty-kaspa)
 
 ---
 

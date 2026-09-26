@@ -1,5 +1,7 @@
 # Limits — one Grok Bot sandbox
 
+> **Historical, retired 25 Sep 2026.** This test is finished. The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST, and no node, fleet or tunnel from it is running. The limits below describe the sandbox as measured on 14 Sep 2026. See [README.md](README.md).
+
 ## Hard facts
 
 - **RAM:** ~15 GiB shared; **swap not available** on this sandbox.

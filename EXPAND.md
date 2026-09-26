@@ -1,5 +1,7 @@
 # Expanding past one-box RAM (full gusto)
 
+> **Historical, retired 25 Sep 2026.** This test is finished. The mainnet node on the box was stopped and wiped on 25 Sep 2026 at 16:46 CEST, and no node, fleet or tunnel from it is running. The extra-machine path in section 5 was never used (see `extra_machines: false` in RESULTS.json). See [README.md](README.md).
+
 First density run on this Grok Bot sandbox stopped at **9 fleet + 1 archival** when MemAvailable hit ~400 MB. Target **200** is a stress ceiling, not a promise on one ~15 GiB box.
 
 ## What blocked us
@@ -58,4 +60,4 @@ Wire each host’s advertise address into that user’s `am i live node?` / flee
 
 ## Measure
 
-`/tmp/kaspa-fleet/status.json` + `kaspa fleet counter` bot — alive / public_ok only.
+During the test: `/tmp/kaspa-fleet/status.json` + `kaspa fleet counter` bot — alive / public_ok only. Both are gone; the final numbers are in [fleet-status.json](fleet-status.json).

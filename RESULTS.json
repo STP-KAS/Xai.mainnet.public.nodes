@@ -5,7 +5,7 @@
   "honest_sandbox_fleet_ceiling": 10,
   "honest_total_mainnet_public_ceiling": 11,
   "primary_archival": 1,
-  "primary_advertise": "159.223.110.159:28492",
+  "primary_advertise": "retired-endpoint:28492",
   "fleet_alive": 9,
   "total_mainnet_public_processes": 10,
   "tn10_preserved": true,
